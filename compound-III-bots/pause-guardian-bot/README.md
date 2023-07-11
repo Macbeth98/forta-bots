@@ -1,26 +1,45 @@
-# Large Tether Transfer Agent
+# Pause Guardian Bot
 
 ## Description
 
-This agent detects transactions with large Tether transfers
+The bot tracks whenever a protocol functionality is paused. The method pause() in comet contract pauses the ability to supply, transfer, withdraw, absorb, and buy assets in the event of an unforseen vulnerability. This method can only be called by a special account known as `PauseGuardian`. The bot also gives alerts whenever the `PauseGuardian` account is updated.
 
 ## Supported Chains
 
 - Ethereum
-- List any other chains this agent can support e.g. BSC
+- Polygon
+- Arbitrum
+- Ethereum Goeril
 
 ## Alerts
 
-Describe each of the type of alerts fired by this agent
+Alerts Fired by this Bot.
 
-- FORTA-1
-  - Fired when a transaction contains a Tether transfer over 10,000 USDT
-  - Severity is always set to "low" (mention any conditions where it could be something else)
-  - Type is always set to "info" (mention any conditions where it could be something else)
-  - Mention any other type of metadata fields included with this alert
+- COMP-01
+
+  - Fired whenever the Compound's protocol functionality is paused
+  - Severity is always set to "critical"
+  - Type is always set to "suspicious"
+  - Metadata contains:
+    - chainId: represents the network/Chain Id
+    - asset: The Base asset of Compound protocol
+    - supplyPaused: true/false, represents whether the supply methods are paused or not
+    - transferPaused: true/false, represents whether transfer is paused or not
+    - withdrawPaused: true/false, represents whether withdraw is pause or not
+    - absorbPaused: true/false, represents whether absorb is paused or not
+    - buyPaused: true/false, represents whether buyCollateral is paused or not
+
+- COMP-02
+  - Fired whenever the Compound protocol's PauseGuardian Account is updated
+  - Severity is always set to "info"
+  - Type is always set to "info"
+  - Metadata contains:
+    - chainId: represents the network/Chain Id
+    - asset: The Base asset of Compound protocol
+    - cometProxy: The address of the Comet proxy contract
+    - oldPauseGuardian: The address of old pauseGuardian
+    - newPauseGuardian: The address of new pauseGuardian
 
 ## Test Data
 
-The agent behaviour can be verified with the following transactions:
-
-- 0x3a0f757030beec55c22cbc545dd8a844cbbb2e6019461769e1bc3f3a95d10826 (15,000 USDT)
+As of now no real test data found.
