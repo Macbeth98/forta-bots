@@ -1,8 +1,8 @@
 {
-  "name": "forta-agent-starter",
+  "name": "pause-guardian-bot",
   "version": "0.0.1",
-  "description": "Forta Agent Typescript starter project",
-  "repository": "https://github.com/forta-network/forta-bot-sdk/tree/master/starter-project",
+  "description": "The bot tracks the whenever a proctocol functionality is paused by PauseGuardian and when PauseGuardian account is updated.",
+  "repository": "https://github.com/Macbeth98/forta-bots/tree/master/compound-III-bots/pause-guardian-bot",
   "chainIds": [
     1,
     137,
