@@ -11,6 +11,7 @@ export interface AssetData {
 }
 
 export interface NetworkConstants {
+  networkName: string;
   assets: { [key: string]: AssetData };
 }
 
@@ -21,6 +22,7 @@ export const networks: {
   getNetworkData: typeof mappedData;
 } = {
   1: {
+    networkName: 'Ethereum Mainnet',
     assets: {
       USDC: {
         comet: '0xc3d688B66703497DAA19211EEdff47f25384cdc3',
@@ -29,6 +31,33 @@ export const networks: {
       WETH: {
         comet: '0xA17581A9E3356d9A858b789D68B4d866e593aE94',
         configurator: '0xA17581A9E3356d9A858b789D68B4d866e593aE94',
+      },
+    },
+  },
+  137: {
+    networkName: 'Polygon',
+    assets: {
+      USDC: {
+        comet: '0xF25212E676D1F7F89Cd72fFEe66158f541246445',
+        configurator: '0x83E0F742cAcBE66349E3701B171eE2487a26e738',
+      },
+    },
+  },
+  42161: {
+    networkName: 'Arbitrum',
+    assets: {
+      USDC: {
+        comet: '0xA5EDBDD9646f8dFF606d7448e414884C7d905dCA',
+        configurator: '0xb21b06D71c75973babdE35b49fFDAc3F82Ad3775',
+      },
+    },
+  },
+  5: {
+    networkName: 'Ethereum Goerli',
+    assets: {
+      USDC: {
+        comet: '0x3EE77595A8459e93C2888b13aDB354017B198188',
+        configurator: '0xB28495db3eC65A0e3558F040BC4f98A0d588Ae60',
       },
     },
   },
