@@ -4,7 +4,10 @@
   "description": "Forta Agent Typescript starter project",
   "repository": "https://github.com/forta-network/forta-bot-sdk/tree/master/starter-project",
   "chainIds": [
-    1, 137, 42161, 5
+    1,
+    137,
+    42161,
+    5
   ],
   "scripts": {
     "build": "tsc",
@@ -33,6 +36,7 @@
   "devDependencies": {
     "@types/jest": "^27.0.1",
     "@types/nodemon": "^1.19.0",
+    "forta-agent-tools": "^3.2.7",
     "jest": "^27.0.6",
     "nodemon": "^2.0.8",
     "ts-jest": "^27.0.3",
