@@ -75,14 +75,12 @@ export const provideHandleTransaction = (provider: ethers.providers.Provider) =>
             metadata: {
               asset,
               manager: args.manager,
-              approvedAsset: await getErc20AssetSymbol(args.asset, provider),
+              approvedAsset: await getErc20AssetSymbol(args.asset, provider, txEvent.blockNumber),
               approvedAssetAddress: args.asset,
               approvedAmount: args.amount.toString(),
             },
           })
         );
-
-        console.log(findings);
       })
     );
 

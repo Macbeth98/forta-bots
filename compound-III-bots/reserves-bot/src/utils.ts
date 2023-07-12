@@ -55,12 +55,12 @@ function hasAddress(id: number, address: string): string | undefined {
   return network.contracts[toChecksumAddress(address)];
 }
 
-export async function getErc20AssetSymbol(address: string, provider: ethers.providers.Provider) {
+export async function getErc20AssetSymbol(address: string, provider: ethers.providers.Provider, blockNumber: number) {
   const contract = new ethers.Contract(address, IErc20, provider);
 
-  const name = await contract.symbol();
+  const symbol = await contract.symbol({ blockTag: blockNumber });
 
-  return name.toString();
+  return symbol.toString();
 }
 
 const getReserveContract = (address: string, provider: ethers.providers.Provider) => {
