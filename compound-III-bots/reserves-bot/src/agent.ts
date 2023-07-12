@@ -10,7 +10,7 @@ import {
 import { ProviderCache } from 'forta-agent-tools';
 import {
   approveThisFunctionABI,
-  getErc20AssetName,
+  getErc20AssetSymbol,
   getReserveValues,
   networks,
   withdrawReservesEventABI,
@@ -75,7 +75,7 @@ export const provideHandleTransaction = (provider: ethers.providers.Provider) =>
             metadata: {
               asset,
               manager: args.manager,
-              approvedAsset: await getErc20AssetName(args.asset, provider),
+              approvedAsset: await getErc20AssetSymbol(args.asset, provider),
               approvedAssetAddress: args.asset,
               approvedAmount: args.amount.toString(),
             },
@@ -122,7 +122,6 @@ export function provideHandleBlock(provider: ethers.providers.Provider) {
             severity: FindingSeverity.High,
             type: FindingType.Info,
             metadata: {
-              chainId: chainId.toString(),
               asset: assetData.asset,
               targetReserves: targetReserves.toString(),
               reserves: reserves.toString(),
