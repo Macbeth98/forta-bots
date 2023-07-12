@@ -1,8 +1,8 @@
 {
-  "name": "forta-agent-starter",
+  "name": "compound-reserves-bot",
   "version": "0.0.1",
-  "description": "Forta Agent Typescript starter project",
-  "repository": "https://github.com/forta-network/forta-bot-sdk/tree/master/starter-project",
+  "description": "The bot monitors when the reserves were withdrawn and given approval by the Governor and also monitors if the reserves are less than the target reserves",
+  "repository": "https://github.com/Macbeth98/forta-bots/tree/master/reserves-bot",
   "chainIds": [
     1, 5, 137, 42161
   ],
