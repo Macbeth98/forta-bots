@@ -173,8 +173,7 @@ describe('Compound Reserves Bot', () => {
     const mockOutput2 = ['876543222233'];
 
     beforeEach(() => {
-      // const chainId = getRandomChainId();
-      const chainId = 1;
+      const chainId = getRandomChainId();
 
       mockContracts = networks[chainId].contracts;
 
