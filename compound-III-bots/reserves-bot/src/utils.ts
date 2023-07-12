@@ -10,7 +10,7 @@ export const reservesABI = [
   'function getReserves() public view returns (int)',
 ];
 
-export const IErc20 = ['function name() public view returns (string)'];
+export const IErc20 = ['function symbol() public view returns (string)'];
 
 export interface NetworkConstants {
   networkName: string;
@@ -55,10 +55,10 @@ function hasAddress(id: number, address: string): string | undefined {
   return network.contracts[toChecksumAddress(address)];
 }
 
-export async function getErc20AssetName(address: string, provider: ethers.providers.Provider) {
+export async function getErc20AssetSymbol(address: string, provider: ethers.providers.Provider) {
   const contract = new ethers.Contract(address, IErc20, provider);
 
-  const name = await contract.name();
+  const name = await contract.symbol();
 
   return name.toString();
 }
