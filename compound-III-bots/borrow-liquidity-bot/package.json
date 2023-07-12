@@ -1,10 +1,10 @@
 {
-  "name": "forta-agent-starter",
+  "name": "compound-account-liquidity-state-tracker",
   "version": "0.0.1",
-  "description": "Forta Agent Typescript starter project",
-  "repository": "https://github.com/forta-network/forta-bot-sdk/tree/master/starter-project",
+  "description": "This Bot detects any Absorb Collateral on Compound Protocol. The Bot can also monitor the account state and gives alerts when it is under collaterized or Liquidatable.",
+  "repository": "https://github.com/Macbeth98/forta-bots/tree/master/compound-III-bots/borrow-liquidity-bot",
   "chainIds": [
-    1
+    1, 137, 42161
   ],
   "scripts": {
     "build": "tsc",
